@@ -24,8 +24,8 @@ public class RadioTest {
 
     @Test
     public void ShouldBeNextRadioStationExpectedMin() {
-        Radio radio = new Radio();
-        radio.setCurrentRadioStation(9);
+        Radio radio = new Radio(30);
+        radio.setCurrentRadioStation(29);
         radio.next();
         int expected = 0;
         int actual = radio.getCurrentRadioStation();
@@ -64,10 +64,10 @@ public class RadioTest {
 
     @Test
     public void ShouldBePrevRadioStationMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(30);
         radio.setCurrentRadioStation(-1);
         radio.prev();
-        int expected = 9;
+        int expected = 29;
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
